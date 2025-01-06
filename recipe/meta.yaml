@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 740b4be1938320efd84ab6845aadaeb71c3047de1c927625613539e30b6e844a
 
 build:
@@ -14,16 +14,16 @@ build:
     - gemviz = gemviz.app:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8,<3.12
+    - python {{ python_min }}
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
-    - python >=3.8,<3.12
+    - python >={{ python_min }},<3.12
     - matplotlib-base
     - pyqt =5
     - pyresttable
@@ -37,6 +37,7 @@ test:
     - gemviz --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://bcda-aps.github.io/gemviz/
