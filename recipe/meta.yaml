@@ -18,12 +18,14 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    # - python {{ python_min }}
+    - python 3.11
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
-    - python >={{ python_min }},<=3.12
+    # - python >={{ python_min }},<=3.12
+    - python >=3.11,<=3.12
     - matplotlib-base
     - pyqt =5
     - pyresttable
@@ -37,7 +39,8 @@ test:
     - gemviz --help
   requires:
     - pip
-    - python {{ python_min }}
+    # - python {{ python_min }}
+    - python 3.11
 
 about:
   home: https://bcda-aps.github.io/gemviz/
