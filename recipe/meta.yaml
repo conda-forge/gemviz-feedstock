@@ -1,5 +1,5 @@
 {% set name = "gemviz" %}
-{% set version = "0.1.1rc1" %}
+{% set version = "0.1.1rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 73c72e973671071d713219cd61442e93224c958a7156475160f4f2cc9340046b
+  sha256: bab87ccfb4f44caef065b8f9ad04cb43a18ef0e3848fdd35f6e323620942592c
 
 build:
   entry_points:
@@ -18,14 +18,12 @@ build:
 
 requirements:
   host:
-    # - python {{ python_min }}
-    - python 3.11
+    - python {{ python_min }}
     - setuptools >=64
     - setuptools-scm >=8
     - pip
   run:
-    # - python >={{ python_min }},<=3.12
-    - python >=3.11,<=3.12
+    - python >={{ python_min }},<=3.12
     - matplotlib-base
     - pyqt =5
     - pyresttable
@@ -39,8 +37,7 @@ test:
     - gemviz --help
   requires:
     - pip
-    # - python {{ python_min }}
-    - python 3.11
+    - python {{ python_min }}
 
 about:
   home: https://bcda-aps.github.io/gemviz/
