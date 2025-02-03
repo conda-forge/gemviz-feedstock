@@ -1,5 +1,5 @@
 {% set name = "gemviz" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 740b4be1938320efd84ab6845aadaeb71c3047de1c927625613539e30b6e844a
+  sha256: 73c72e973671071d713219cd61442e93224c958a7156475160f4f2cc9340046b
 
 build:
   entry_points:
     - gemviz = gemviz.app:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -23,7 +23,7 @@ requirements:
     - setuptools-scm >=8
     - pip
   run:
-    - python >={{ python_min }},<3.12
+    - python >={{ python_min }},<=3.12
     - matplotlib-base
     - pyqt =5
     - pyresttable
