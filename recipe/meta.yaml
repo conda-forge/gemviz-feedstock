@@ -1,5 +1,5 @@
 {% set name = "gemviz" %}
-{% set version = "0.1.1" %}
+{% set version = "1.0.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e15d4214fd32825e712adb23e74c98153aa3dec4dfb1b458da0f1a4e0c52b82d
+  sha256: d327b0a6fbee51f83ab2d4578b9513a4fe96bc30ed0365ec1b5518aaeba42ff3
 
 build:
   entry_points:
@@ -24,9 +24,11 @@ requirements:
     - pip
   run:
     - python >={{ python_min }},<=3.12
+    - bluesky-tiled-plugins
     - matplotlib-base
     - pyqt =5
     - pyresttable
+    - scipy
     - tiled
 
 test:
