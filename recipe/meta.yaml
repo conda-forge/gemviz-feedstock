@@ -1,13 +1,13 @@
 {% set name = "gemviz" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 818f92880a8bf5b65f737fbdb757f91ac8a87b169404aaf0acd4877c0f536628
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3aeca53cbcbd89daea7a8a38b572ee036d83db1119439a39085f6160309eeabc
 
 build:
   entry_points:
